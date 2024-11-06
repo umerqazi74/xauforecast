@@ -3,10 +3,6 @@ import pandas as pd
 import yfinance as yf
 from skforecast.ForecasterAutoreg import ForecasterAutoreg
 from xgboost import XGBRegressor
-import warnings
-import numpy as np
-
-warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
 
