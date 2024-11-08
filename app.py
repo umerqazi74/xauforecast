@@ -23,9 +23,8 @@ def fetch_xau_data():
     # Reset index to avoid any issues with indices in JSON serialization
     df.reset_index(inplace=True)
     
-    # Convert any datetime index to string format
-    if 'Date' in df.columns:
-        df['Date'] = df['Date'].astype(str)
+    # Convert the 'Date' column to a string with the desired format
+    df['Date'] = df['Date'].dt.strftime('%Y-%m-%d')
     
     # Convert the DataFrame to a dictionary format that is JSON serializable
     data = df.to_dict(orient='records')
